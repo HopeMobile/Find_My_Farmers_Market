@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:background">#5cb860</item>
+        <item name="android:textColor">@color/primary_background_color</item>
+        <item name="android:actionBarStyle">@style/MaterialDesignTheme</item>
+
+    </style>
+
+    <style name="ActionBarStyle" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/accent_background_color</item>
+        <item name="android:textColor">@color/action_bar_text_color</item>
+    </style>
+
+    <!-- Search Results Style -->
+    <style name="MarketListStyle">
+    </style>
+
+
+    <style name="MaterialDesignTheme">
+        <item name="android:colorPrimary">@color/accent_background_color</item>
+        <item name="android:colorPrimaryDark">@color/action_bar_text_color</item>
+    </style>
+
+</resources>

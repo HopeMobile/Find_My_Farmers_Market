@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                tools:context=".MainActivity$PlaceholderFragment"
+                tools:layout="@layout/fragment_search"
+                style="@style/AppTheme">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_field_label"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/search_field_label"
+        android:textSize="18sp"/>
+
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/accent_background_color"
+        android:id="@+id/search_field"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:queryHint="@string/search_field_hint"
+        android:layout_marginBottom="75dp"
+        android:inputType="text|textCapSentences|number|textAutoComplete"/>
+
+    <Button
+        android:background="@color/secondary_text_color"
+        android:textColor="@color/accent_background_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_button"
+        android:text="@string/search_button_label"
+        android:textSize="18sp"
+        android:layout_marginBottom="75dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usda_accuracy_disclaimer"
+        android:textSize="22sp"
+        />
+
+</LinearLayout>

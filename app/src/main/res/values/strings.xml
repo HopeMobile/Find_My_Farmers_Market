@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Find My Farmers Market</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_search_results">Closest Farmers Markets</string>
+
+
+    <!-- Main Activity and Search Fragment Strings -->
+    <string name="search_field_hint">Enter City, State, or Zipcode</string>
+    <string name="search_button_label">Search</string>
+    <string name="search_field_label">Start your search below.</string>
+
+   <!-- Required Disclaimer from USDA , must be  prominently displayed in App  -->
+    <string name="usda_accuracy_disclaimer">This product uses USDA’s National Farmers Market API but is not endorsed or certified by USDA</string>
+        <string name="title_activity_market_detail">Market Detail</string>
+    <string name="title_activity_maps">Market on the Map</string>
+
+
+</resources>
+
+

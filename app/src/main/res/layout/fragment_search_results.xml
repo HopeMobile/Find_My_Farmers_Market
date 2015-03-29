@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="davidhope.findmyfarmersmarket.MarketResultsActivity$PlaceholderFragment"
+                android:orientation="vertical"
+                android:theme="@style/AppTheme">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/farmersMarketNameView"
+            android:minHeight="?android:listPreferredItemHeight"
+            tools:text="Dekalb County Farmers Market"
+            android:textSize="22sp"
+            android:paddingBottom="4dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/farmersMarketAddressView"
+            android:minHeight="?android:listPreferredItemHeight"
+            tools:text="5555 Beard Blvd N.E"
+            android:textSize="22sp"
+            android:paddingBottom="4dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/farmersMarketZipcodeView"
+            android:minHeight="?android:listPreferredItemHeight"
+            tools:text="Decatur, GA 30033"
+            android:textSize="22sp"
+            android:paddingBottom="4dp"/>
+
+</LinearLayout>
