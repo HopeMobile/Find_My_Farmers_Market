@@ -21,8 +21,6 @@
 
 
     <style name="MaterialDesignTheme">
-        <item name="android:colorPrimary">@color/accent_background_color</item>
-        <item name="android:colorPrimaryDark">@color/action_bar_text_color</item>
     </style>
 
 </resources>

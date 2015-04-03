@@ -1,13 +1,10 @@
 package davidhope.findmyfarmersmarket;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 
 public class MarketResultsActivity extends ActionBarActivity {
@@ -15,14 +12,17 @@ public class MarketResultsActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_search_results);
+        setContentView(R.layout.activity_search_results);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new MarketResultsFragment())
                     .commit();
         }
-    }
 
+        Intent intent = getIntent();
+        intent.getAction();
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -46,19 +46,4 @@ public class MarketResultsActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_search_results, container, false);
-            return rootView;
-        }
-    }
 }

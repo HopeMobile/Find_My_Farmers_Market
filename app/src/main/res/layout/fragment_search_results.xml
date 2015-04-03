@@ -16,12 +16,14 @@
             android:id="@+id/farmersMarketNameView"
             android:minHeight="?android:listPreferredItemHeight"
             tools:text="Dekalb County Farmers Market"
+            android:background="@color/secondary_text_color"
             android:textSize="22sp"
             android:paddingBottom="4dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/farmersMarketAddressView"
+            android:background="@color/secondary_text_color"
             android:minHeight="?android:listPreferredItemHeight"
             tools:text="5555 Beard Blvd N.E"
             android:textSize="22sp"
@@ -30,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/farmersMarketZipcodeView"
+            android:background="@color/secondary_text_color"
             android:minHeight="?android:listPreferredItemHeight"
             tools:text="Decatur, GA 30033"
             android:textSize="22sp"

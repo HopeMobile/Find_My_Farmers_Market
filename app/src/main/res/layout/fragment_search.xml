@@ -8,6 +8,7 @@
                 android:orientation="vertical"
                 tools:context=".MainActivity$PlaceholderFragment"
                 tools:layout="@layout/fragment_search"
+                android:id="@+id/search_fragment"
                 style="@style/AppTheme">
 
     <TextView
@@ -20,16 +21,17 @@
         android:text="@string/search_field_label"
         android:textSize="18sp"/>
 
-    <SearchView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/accent_background_color"
         android:id="@+id/search_field"
         android:layout_gravity="center_horizontal"
+        android:background="@color/secondary_text_color"
+        android:textColor="@color/accent_background_color"
+        android:hint="@string/search_field_hint"
         android:textSize="18sp"
-        android:queryHint="@string/search_field_hint"
         android:layout_marginBottom="75dp"
-        android:inputType="text|textCapSentences|number|textAutoComplete"/>
+        android:inputType="number|text"/>
 
     <Button
         android:background="@color/secondary_text_color"
