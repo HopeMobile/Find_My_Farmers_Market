@@ -8,13 +8,19 @@
 
     <application
         android:allowBackup="true"
+        android:enabled="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:enabled="true">
+        android:theme="@style/AppTheme" >
+        <provider
+            android:name=".data.MarketProvider"
+            android:authorities="davidhope.findmyfarmersmarket.data.MarketProvider"
+            android:exported="false" />
 
-        <meta-data android:name="com.google.android.gms.version"
-                   android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name=".SearchActivity"
             android:label="@string/app_name" >
@@ -28,16 +34,25 @@
             android:name=".MarketResultsActivity"
             android:label="@string/title_activity_search_results"
             android:parentActivityName=".SearchActivity" >
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SearchActivity" />
         </activity>
-     <service android:name=".service.FetchMarketService"
-              android:enabled="true"
-              android:exported="false"
-         android:label="Getting your local markets"/>
 
+        <service
+            android:name=".service.FetchMarketService"
+            android:enabled="true"
+            android:exported="false"
+            android:label="Getting your local markets" />
+
+        <activity
+            android:name=".MarketDetail"
+            android:label="@string/title_activity_market_detail"
+            android:parentActivityName=".MarketResultsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="davidhope.findmyfarmersmarket.MarketResultsActivity" />
+        </activity>
     </application>
 
 </manifest>

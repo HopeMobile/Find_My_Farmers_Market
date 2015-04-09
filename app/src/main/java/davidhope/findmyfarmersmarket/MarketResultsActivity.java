@@ -9,13 +9,17 @@ import android.view.MenuItem;
 
 public class MarketResultsActivity extends ActionBarActivity {
 
+    public static final String LOG_TAG = MarketResultsActivity.class.getSimpleName();
+
+    protected boolean mTwoPane;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new MarketResultsFragment())
+                    .add(R.id.result_container, new MarketResultsFragment())
                     .commit();
         }
 
