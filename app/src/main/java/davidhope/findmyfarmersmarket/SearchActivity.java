@@ -1,16 +1,22 @@
 package davidhope.findmyfarmersmarket;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class SearchActivity extends ActionBarActivity {
+public class SearchActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = SearchActivity.class.getSimpleName();
 
     protected boolean mTwoPane;
+
+    protected FragmentManager mFragmentManager;
+
+    protected FragmentTransaction mFragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +25,8 @@ public class SearchActivity extends ActionBarActivity {
 
         if (savedInstanceState == null) {
            getSupportFragmentManager().beginTransaction()
-                   .add(R.id.container, new SearchFragment())
+                   .add(R.id.search_container, new SearchFragment())
                    .commit();
-
 
         }
 
@@ -45,6 +50,8 @@ public class SearchActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+
+
 
         return super.onOptionsItemSelected(item);
     }

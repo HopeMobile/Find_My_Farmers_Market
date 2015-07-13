@@ -1,81 +1,92 @@
 package davidhope.findmyfarmersmarket.data;
 
-import android.content.ContentProvider;
 import android.content.ContentResolver;
-import android.content.ContentValues;
-import android.database.Cursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
  * Created by David on 4/2/2015.
  */
-public class MarketContract extends ContentProvider {
+public class MarketContract  {
+
+    // Base Uri used by ContentProvider and accessed by Outside Applications for their needs.
+//    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+
+    //Table for search results.
+
 
     //The Unique identifier for your ContentProvider.
     public static final String CONTENT_AUTHORITY = "davidhope.findmyfarmersmarket";
 
-    // Base Uri used by ContentProvider and accessed by Outside Applications for their needs.
+    // Potential paths to be used for retrieving data from the SQLite Tables.
+    public static final String PATH_MARKET_SEARCH = "marketDatabase";
+
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
-    // Potential paths to be used for retrieving data from the SQLite Tables.
-    public static final String PATH_MARKET_NAMES = "marketnames";
+        /* public static  Uri buildDetailPath(long id) {
+         return CONTENT_URI.buildUpon().appendPath("Detail").appendPath(String.valueOf(id)).build();
+      }
+
+      //TODO: Possibly use to get marketNames instead of buildDetailPath.
+      public static Uri buildZipcodePath(Uri zipcode) {
+          return CONTENT_URI.buildUpon().appendPath("Zipcode").appendPath(String.valueOf(zipcode)).build();
+      }
+
+        public static  Uri buildLatLngPath(String latLng) {
+            return CONTENT_URI.buildUpon().appendPath("LatLng").appendPath(latLng).build();
+        }*/
 
 
-    @Override
-    public boolean onCreate() {
-        return false;
-    }
+    // Copies of original buildUris(), to test Uri Exception fixes.
 
-    @Override
-    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        return null;
-    }
-
-    @Override
-    public String getType(Uri uri) {
-        return null;
-    }
-
-    @Override
-    public Uri insert(Uri uri, ContentValues values) {
-        return null;
-    }
-
-    @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
-        return 0;
-    }
-
-    @Override
-    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        return 0;
-    }
-
-    //Table for search results.
     public static abstract class SearchResultsTable implements BaseColumns  {
 
-      public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_MARKET_NAMES).build();
+        // Uri for experimenting on to find solution.
+//        public static final Uri CONTENT_URI  = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_MARKET_SEARCH).buildUpon().build();
 
-      public static final String CONTENT_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE
-              + " / " + CONTENT_AUTHORITY + " / " + PATH_MARKET_NAMES;
+        // todo Will only need for detail layout.
+        public static final String CONTENT_ITEM_TYPE =
+                ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_MARKET_SEARCH;
+
+        public static final String CONTENT_TYPE =
+                ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_MARKET_SEARCH;
+
+        public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon()
+                .appendPath(PATH_MARKET_SEARCH).build();
+
+//        public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon()
+//                .appendPath(PATH_MARKET_SEARCH).build();
 
 
-      public static final String TABLE_NAME = "searchResults";
+        //TODO Use substring on MILES_TO_MARKET and MARKET_NAME column values
 
-      // ID returned by results to identify each individual market and required for inner-join.
-      public static final String COLUMN_MARKET_IDS = "id";
+        //TODO: Possibly change from "id" to "ids"
+        // ID returned by results to identify each individual market and required for inner-join.
 
-      // Used to display market distance from users.
-      public static final String COLUMN_MILES_TO_MARKET = "milesTo";
+        public static final String MARKET_TABLE_NAME = "marketTableName";
 
-      // Names of each market returned by search and used for more detail in MarketDetailsTable
-      public static final String COLUMN_MARKET_NAME = "marketname";
+        public static final String COLUMN_ZIPCODE = "zipcode";
+
+        public static final String COLUMN_LAT_LNG = "latLng";
+
+        // todo: Might not need COLUMN_MARKET_IDS, but just use _ID instead for same data.
+        public static final String COLUMN_MARKET_IDS = "id";
+
+        // Used to display market distance from users.
+        public static final String COLUMN_MILES_TO_MARKET = "milesTo";
+
+        // Names of each market returned by search and used for more detail in MarketDetailsTable
+        public static final String COLUMN_MARKET_NAME = "marketName";
+
+
+//        public static String getUriData(Uri uri) {
+//            return uri.getPathSegments().get(2);
+//        }
 
     }
 
     //TODO: Create table for detailed market information in version 2.0
-    public static abstract class MarketDetailsTable implements BaseColumns {
+  /*  public static abstract class MarketDetailsTable implements BaseColumns {
 
-    }
+    } */
 }

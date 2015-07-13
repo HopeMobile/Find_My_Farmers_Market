@@ -6,9 +6,9 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:layout_gravity="center_vertical"
                 android:orientation="vertical"
-                tools:context=".MainActivity$PlaceholderFragment"
+                tools:context=".MainActivity$SearchFragment"
                 tools:layout="@layout/fragment_search"
-                android:id="@+id/search_fragment"
+                android:id="@+id/search_fragment_layout"
                 style="@style/AppTheme">
 
     <TextView
@@ -29,9 +29,13 @@
         android:background="@color/secondary_text_color"
         android:textColor="@color/accent_background_color"
         android:hint="@string/search_field_hint"
+        android:saveEnabled="true"
         android:textSize="18sp"
         android:layout_marginBottom="75dp"
-        android:inputType="number|text"/>
+        android:inputType="number|text"
+        android:singleLine="true"
+        android:maxLength="5"
+        android:textIsSelectable="false"/>
 
     <Button
         android:background="@color/secondary_text_color"
