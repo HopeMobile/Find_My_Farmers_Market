@@ -3,7 +3,7 @@
              android:id="@+id/result_container"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="davidhope.findmyfarmersmarket.MarketResultsActivity"
+             tools:context=".Views.MarketResultsActivity"
              tools:ignore="MergeRootFrame"
              android:clickable="false"
              style="@style/AppTheme">

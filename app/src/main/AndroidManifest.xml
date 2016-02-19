@@ -14,16 +14,12 @@
         android:theme="@style/AppTheme" >
 
 
-        <provider
-            android:name="davidhope.findmyfarmersmarket.data.MarketProvider"
-            android:authorities="davidhope.findmyfarmersmarket"/>
-
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".SearchActivity"
+            android:name=".Views.SearchActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop">
             <intent-filter>
@@ -33,12 +29,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MarketResultsActivity"
+            android:name=".Views.MarketResultsActivity"
             android:label="@string/title_activity_search_results"
-            android:parentActivityName=".SearchActivity">
+            android:parentActivityName=".Views.SearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SearchActivity" />
+                android:value=".Views.SearchActivity" />
         </activity>
 
         <service
@@ -48,12 +44,12 @@
             android:label="Getting your local markets" />
 
         <activity
-            android:name=".MarketDetail"
+            android:name=".Views.MarketDetailFragment$MarketDetail"
             android:label="@string/title_activity_market_detail"
-            android:parentActivityName=".MarketResultsActivity" >
+            android:parentActivityName=".Views.MarketResultsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="davidhope.findmyfarmersmarket.MarketResultsActivity" />
+                android:value=".Views.MarketResultsActivity" />
         </activity>
     </application>
 
